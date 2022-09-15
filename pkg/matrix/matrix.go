@@ -90,14 +90,12 @@ func (m *Matrix) CircleLikePrint() {
 		switch count % 4 {
 		case 0:
 			// right
-			m.Print()
 			row := m.GetRow(0)
 			fmt.Println(row)
 			m.Data = m.Data[1:m.M]
 			m.M--
 		case 1:
 			// down
-			m.Print()
 			col := m.GetCol(m.N - 1)
 			fmt.Println(col)
 			for i := 0; i < m.M; i++ {
@@ -106,7 +104,6 @@ func (m *Matrix) CircleLikePrint() {
 			m.N--
 		case 2:
 			// left
-			m.Print()
 			row := m.GetRow(m.M - 1)
 			reverse(row)
 			fmt.Println(row)
@@ -114,7 +111,6 @@ func (m *Matrix) CircleLikePrint() {
 			m.M--
 		case 3:
 			// up
-			m.Print()
 			col := m.GetCol(0)
 			reverse(col)
 			fmt.Println(col)

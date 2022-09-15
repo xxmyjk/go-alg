@@ -17,6 +17,7 @@ func main() {
 	}
 
 	m := matrix.New(4, 7, el...)
+	m.Print()
 	m.CircleLikePrint()
 
 	// Reverse tree
