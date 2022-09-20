@@ -4,11 +4,13 @@ import (
 	"fmt"
 
 	"github.com/xxmyjk/go-alg/pkg/matrix"
+	"github.com/xxmyjk/go-alg/pkg/recursive"
 	"github.com/xxmyjk/go-alg/pkg/tree"
 )
 
 func main() {
 	// CircleLikePrint matrix
+	fmt.Println("CircleLikePrint matrix --->")
 	el := []int{
 		1, 2, 3, 4, 5, 6, 7,
 		8, 9, 10, 11, 12, 13, 14,
@@ -21,6 +23,7 @@ func main() {
 	m.CircleLikePrint()
 
 	// Reverse tree
+	fmt.Println("Reverse tree --->")
 	/**
 	1
 	2 | 3
@@ -48,4 +51,16 @@ func main() {
 	tree.Reverse(root)
 	fmt.Println()
 	tree.Print(root)
+
+	//hano tower
+	fmt.Println("\nhano tower --->")
+	length := 5
+	A := recursive.NewTower(length)
+	B, C := recursive.Tower{}, recursive.Tower{}
+
+	h := &recursive.H{
+		Count: 0,
+	}
+	h.A, h.B, h.C = A, &B, &C
+	h.Hano(A, &B, &C, length)
 }
